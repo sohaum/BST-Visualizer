@@ -251,7 +251,7 @@ If you found this project helpful, please consider:
 
 <div align="center">
 
-**[🌐 Live Demo](https://yourusername.github.io/bst-visualizer)** | **[🐛 Report Bug](https://github.com/sohaum/BST-Visualizer/issues)**
+**[🌐 Live Demo](https://bst-visualizer-ashy.vercel.app/)** | **[🐛 Report Bug](https://github.com/sohaum/BST-Visualizer/issues)**
 
 Made with ❤️ and lots of ☕
 
