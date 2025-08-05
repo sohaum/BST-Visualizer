@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Binary Search Tree Visualizer</h1>
+            <p class="subtitle">Interactive visualization of BST operations with smooth animations</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <div class="input-group">
+                    <input type="number" id="nodeInput" placeholder="Value" min="1" max="999">
+                    <button class="btn primary" onclick="insertNode()">Insert</button>
+                    <button class="btn" onclick="deleteNode()">Delete</button>
+                </div>
+                
+                <div class="input-group">
+                    <button class="btn" onclick="clearTree()">Clear Tree</button>
+                    <button class="btn" onclick="generateRandomTree()">Random Tree</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="traversal-controls">
+                    <span class="label">Traversals:</span>
+                    <button class="btn traversal" onclick="animateTraversal('inorder')">Inorder</button>
+                    <button class="btn traversal" onclick="animateTraversal('preorder')">Preorder</button>
+                    <button class="btn traversal" onclick="animateTraversal('postorder')">Postorder</button>
+                    <button class="btn" onclick="stopTraversal()">Stop</button>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Nodes:</span>
+                        <span class="stat-value" id="nodeCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Height:</span>
+                        <span class="stat-value" id="treeHeight">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Balance Factor:</span>
+                        <span class="stat-value" id="balanceFactor">0</span>
+                    </div>
+                </div>
+                <div class="traversal-result">
+                    <span class="result-label">Traversal Result:</span>
+                    <span class="result-value" id="traversalResult">[]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="visualization-container">
+            <svg id="treeSvg" width="1200" height="600">
+                <defs>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.4" />
+                    </linearGradient>
+                    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:0.7" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li><strong>Insert:</strong> Enter a number and click "Insert" to add a node</li>
+                <li><strong>Delete:</strong> Enter a number and click "Delete" to remove a node</li>
+                <li><strong>Traversals:</strong> Click traversal buttons to see different tree traversal animations</li>
+                <li><strong>Random Tree:</strong> Generate a random BST for testing</li>
+                <li><strong>Clear:</strong> Remove all nodes from the tree</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
