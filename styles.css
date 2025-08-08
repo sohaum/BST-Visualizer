@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/*     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    background: linear-gradient(135deg, #41245e 0%, #2d3a61 100%);
     min-height: 100vh;
     overflow-x: auto;
     background-attachment: fixed;
@@ -398,4 +399,5 @@ input::placeholder {
         width: 70px;
         padding: 12px 14px;
     }
+
 }
